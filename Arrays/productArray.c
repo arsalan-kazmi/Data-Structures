@@ -1,3 +1,5 @@
+// WAP to find product of n numbers in an array?
+
 #include <stdio.h>
 int main()
 {

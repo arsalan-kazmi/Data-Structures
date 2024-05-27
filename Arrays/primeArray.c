@@ -1,3 +1,5 @@
+// WAP to display only prime numbers in an array?
+
 #include <stdio.h>
 int main()
 {

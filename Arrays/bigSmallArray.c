@@ -1,4 +1,6 @@
-#include<stdio.h>
+// WAP to find biggest and smallest numbers in an array?
+
+#include <stdio.h>
 int main()
 {
   int size;
@@ -7,7 +9,7 @@ int main()
   scanf("%d", &size);
 
   int arr[size];
-  
+
   printf("Enter the array elements: ");
   for (int i = 0; i < size; i++)
   {
@@ -19,7 +21,7 @@ int main()
   {
     printf("%d ", arr[i]);
   }
-  printf("\n"); 
+  printf("\n");
 
   int smallest = arr[0];
   int largest = arr[0];
@@ -39,7 +41,6 @@ int main()
 
   printf("Smallest element : %d \n", smallest);
   printf("Largest element : %d \n", largest);
-   
-  
+
   return 0;
 }

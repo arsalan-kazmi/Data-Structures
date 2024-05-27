@@ -1,4 +1,6 @@
-#include<stdio.h>
+// WAP to average of n numbers in an array?
+
+#include <stdio.h>
 int main()
 {
   int size;
@@ -14,7 +16,7 @@ int main()
   for (int i = 0; i < size; i++)
   {
     scanf("%d", &arr[i]);
-    sum += arr[i];    
+    sum += arr[i];
   }
 
   printf("Array elements are : ");
@@ -22,10 +24,10 @@ int main()
   {
     printf("%d ", arr[i]);
   }
-  
+
   printf("\n");
 
-  avg = sum/size;
+  avg = sum / size;
   printf("Average : %f", avg);
 
   return 0;

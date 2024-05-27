@@ -1,3 +1,5 @@
+// WAP to display only even numbers in an array?
+
 #include <stdio.h>
 int main()
 {
