@@ -1,4 +1,4 @@
-// WAP to average of n numbers in an array?
+// WAP to Variance and Standard Deviation of n numbers in an array?
 
 #include <stdio.h>
 #include <math.h>
