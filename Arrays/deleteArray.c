@@ -1,9 +1,7 @@
-// WAP to delete a given element from an array?
-
 #include <stdio.h>
 int main()
 {
-  int size, item, index;
+  int size, item, index, notFound = 0;
 
   printf("Enter the size of the array :");
   scanf("%d", &size);
@@ -26,29 +24,28 @@ int main()
   printf("\nEnter the element to delete : ");
   scanf("%d", &item);
 
-  // Checking if the item is present in the array or not
-  if (item > size)
+  // Deleting the element
+  for (int i = 0; i < size; i++)
   {
-    printf("Item not found.");
+    if (arr[i] == item)
+    {
+      index = i;
+      for (int i = index; i < size; i++)
+      {
+        arr[i] = arr[i + 1];
+        notFound = 1;
+      }
+    }
+  }
+
+  // Checking if the element is present in the arary or not
+  if (notFound == 0)
+  {
+    printf("Element not found");
   }
   else
   {
-
-    for (int i = 0; i < size; i++)
-    {
-      if (arr[i] == item)
-      {
-        index = i;
-        break;
-      }
-    }
     size -= 1;
-
-    for (int i = index; i < size; i++)
-    {
-      arr[i] = arr[i + 1];
-    }
-
     printf("\nAfter deletion : ");
     for (int i = 0; i < size; i++)
     {
