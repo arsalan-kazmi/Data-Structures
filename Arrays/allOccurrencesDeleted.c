@@ -1,3 +1,5 @@
+// WAP to delete all occurrences of a element in an array
+
 #include <stdio.h>
 int main()
 {
