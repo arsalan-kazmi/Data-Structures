@@ -1,0 +1,129 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+  int data;
+  struct node *left;
+  struct node *right;
+};
+
+struct node *root = NULL;
+
+void create_bst()
+{
+  int n;
+  struct node *temp, *trav;
+
+  printf("Enter the number of nodes : ");
+  scanf("%d", &n);
+
+  for (int i = 1; i <= n; i++)
+  {
+    temp = (struct node *)malloc(sizeof(struct node));
+    printf("Enter data : ");
+    scanf("%d", &temp->data);
+
+    temp->left = temp->right = NULL;
+
+    if (root == NULL)
+    {
+      root = temp;
+    }
+    else
+    {
+      trav = root;
+
+      while (1)
+      {
+        if (temp->data < trav->data)
+        {
+          if (trav->left == NULL)
+          {
+            trav->left = temp;
+            break;
+          }
+          else
+          {
+            trav = trav->left;
+          }
+        }
+        else if (temp->data > trav->data)
+        {
+          if (trav->right == NULL)
+          {
+            trav->right = temp;
+            break;
+          }
+          else
+          {
+            trav = trav->right;
+          }
+        }
+        else
+        {
+          printf("\nInvalid data");
+        }
+      }
+    }
+  }
+}
+
+int find_min(struct node *root)
+{
+  if (root == NULL)
+  {
+    printf("The tree is empty.\n");
+    return -1;
+  }
+  struct node *trav = root;
+  while (trav->left != NULL)
+  {
+    trav = trav->left;
+  }
+  return trav->data;
+}
+
+int find_max(struct node *root)
+{
+  if (root == NULL)
+  {
+    printf("The tree is empty.\n");
+    return -1;
+  }
+  struct node *trav = root;
+  while (trav->right != NULL)
+  {
+    trav = trav->right;
+  }
+  return trav->data;
+}
+
+void in_order(struct node *root)
+{
+  if (root != NULL)
+  {
+    in_order(root->left);
+    printf("%d ", root->data);
+    in_order(root->right);
+  }
+}
+
+int main()
+{
+  create_bst();
+
+  int min = find_min(root);
+  int max = find_max(root);
+
+  if (min != -1)
+  {
+    printf("The smallest element in the BST is: %d\n", min);
+  }
+  if (max != -1)
+  {
+    printf("The largest element in the BST is: %d\n", max);
+  }
+
+  return 0;
+}
